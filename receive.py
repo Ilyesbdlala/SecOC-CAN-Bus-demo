@@ -4,21 +4,22 @@ from datetime import datetime
 import hmac
 import hashlib
 import keys
-
+import id
 keys = keys.keys
 
 os.system('sudo ip link set can0 type can bitrate 100000')
 os.system('sudo ifconfig can0 up')
 
 can0 = can.interface.Bus(channel = 'can0', bustype = 'socketcan_ctypes')# socketcan_native
-my_id= 'B'
+my_id= id.id["id"]
 
 
 while True:
 	print("----------------------------------------------------------------------")
-	msg = can0.recv(10.0)
 	f = open('./msgCounter')
 	file_read = int(f.read())
+	msg = can0.recv(10.0)
+
 	if(file_read == 128):
         	counter = 0
 	else:
