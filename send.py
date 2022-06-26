@@ -63,7 +63,7 @@ print("Payload:", payload, "\t\t\t\tSize: ", len(payload))
 print("HMAC Digest:", hmac_digest, "\t\t\tSize: ", len(hmac_digest))
 
 data = bytearray(data,encoding='utf8')
-print("\nData to send: " ,str(data, 'utf-8'), "\tSize: ", len(data))
+print("\nData to send: " ,str(data, 'utf-8'), "\t\tSize: ", len(data))
 
 
 can0 = can.interface.Bus(channel = 'can0',bustype = 'socketcan_ctypes')# socketcan_nati
