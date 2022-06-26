@@ -5,8 +5,11 @@ import hmac
 import hashlib
 import sys
 import keys
+import id
+
 
 keys = keys.keys
+id= id.id["id"]
 
 os.system('sudo ip link set can0 type can bitrate 100000')
 os.system('sudo ifconfig can0 up')
@@ -31,7 +34,6 @@ else:
 key = keys[receiver]
 key_bytearray = bytearray(key,encoding='utf8')
 
-id = 'A'
 
 f = open('./msgCounter')
 file_read = int(f.read())
