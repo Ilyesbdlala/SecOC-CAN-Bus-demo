@@ -86,12 +86,9 @@ while True:
 				print("HMAC generated: ", digest_caluclated)
 
 				# Comparing the locally calculated truncated HMAC with the one received in CAN Frame
-				# If they are the same, the message is accepted and the message counter is incremented
-				# Otherwise the message is rejected.
+				# If they are the same, the message is accepted, otherwise the message is rejected.
 				if (digest_to_verify == bytearray(digest_caluclated,encoding='utf8')):
 					print("Message:", str(payload,"utf-8"), "Accepted" )
-					#f = open('./msgCounter','w')
-					#f.write(str(file_read+1))
 				else:
 					print("Message Rejected")
 
